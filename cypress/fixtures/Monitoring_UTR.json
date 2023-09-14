@@ -1,0 +1,12 @@
+{
+    "CustomerID" : "110003068",
+    "CustomerName" : "HENGKY GUNAWAN",
+    "TransactionDate" : "2023-01-19",
+    "TransactionDesc" : "TARIK TUNAI",
+    "TransactionType" : "DEBIT",
+    "BranchCode" : "ID0010300",
+    "Branch" : "0300-KC KELAPA GADING",
+    "WorkedStatus" : "ANALIS KANTOR CABANG",
+    "ReportStatus" : "Normal",
+    "TransactionStatus" : "Approved"
+}

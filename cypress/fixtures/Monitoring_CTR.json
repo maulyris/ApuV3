@@ -1,0 +1,12 @@
+{
+    "CustomerID" : "110000367",
+    "CustomerName" : "GAJAH TUNGGAL TBK PT.",
+    "TransactionDate" : "2023-03-01",
+    "TransactionDesc" : "Cash Withdrawal",
+    "TransactionType" : "DEBIT",
+    "BranchCode" : "ID0010100",
+    "Branch" : "0100-CABANG UTAMA JAKA",
+    "WorkedStatus" : "DONE",
+    "ReportStatus" : "Reported",
+    "TransactionStatus" : "Approved"
+}

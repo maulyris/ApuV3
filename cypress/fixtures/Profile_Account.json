@@ -1,0 +1,19 @@
+{
+    "CustomerID":"100000001",
+    "CustomerName":"BANK INDONESIA",
+    "TotalAccount":"5",
+
+    "CustomerIDACC":"100000001",
+    "CustomerNameACC":"BANK INDONESIA",
+    "ProductCodeACC":"5001",
+    "ProductACC":"NOSTRO BI",
+    "OpeningDateACC":"2022-09-26",
+    "AccountNumberACC":"8000000028",
+    "BranchCode" : "ID0010001",
+    "BranchName" : "0001 - PT BANK GANESHA",
+    "AccountName" : "GIRO BI USD",
+
+    "Branch" : "ID0010100 - 0100-CABANG UTAMA JAKA",
+    "Product" : "62221 - Legal Fees",
+    "OpeningDate" : "08/02/2023 - 08/12/2023"
+}

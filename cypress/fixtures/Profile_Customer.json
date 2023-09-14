@@ -1,0 +1,17 @@
+{
+    "OpeningDate" : "2022-02-10",
+    "CustomerID" : "110498699",
+    "CustomerTypeDesc" : "INDIVIDUAL",
+    "CustomerName" : "SAINI",
+    "BranchCode" : "ID0010600",
+    "BranchName" : "0600-CABANG - SURABAYA",
+    "RBACode" : "3",
+    "RBADesc" : "HIGH RISK BOMB",
+    "BankType" : "CONVENTIONAL",
+    "IdentityNumber" : "5202074107840493",
+    "Address" : "LANGKO GADING",
+    "BranchExport" : "ID0010100 - 0100-CABANG UTAMA JAKA",
+    "CustomerTypeExport" : "1 - INDIVIDUAL",
+    "RiskTypeExport" : "1 - LOW RISK",
+    "BankTypeExport" : "1 - CONVENT"
+}
