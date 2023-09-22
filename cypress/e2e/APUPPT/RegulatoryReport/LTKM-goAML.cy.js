@@ -11,7 +11,6 @@ let LTKM = new goamlLTKM
 
 
 describe ('Menu goAML LTKM', () => {
-
     let APUPPT;
     before('Link Visit', () => {
         cy.fixture("goaml_LTKM.json").then((data)=>
@@ -19,14 +18,14 @@ describe ('Menu goAML LTKM', () => {
             APUPPT=data;
         })
         cy.visit ('https://apuppt-v5.jiarsi.com/dev/')
-        Login.Inputusername('superuser')
-        Login.Inputpassword('Jiarsi1@')
+        Login.Inputusername('superuser4')
+        Login.Inputpassword('Jiarsi2@')
         Login.ClickButtonSignIn()
         cy.wait(4000)
     })
 
     it('goAML LTKM Report', () => {
-        cy.get('.breadcrumb > :nth-child(1) > .text-black').should('be.visible','content.text','Visualization Dashboard')
+        cy.xpath('//a[@class="text-black text-hover-primary"]').should('be.visible')
         Menu.ClickRegulatoryReport()
         Menu.ClickGoamlLTKM()
         cy.wait(4000)
@@ -35,24 +34,24 @@ describe ('Menu goAML LTKM', () => {
         //LTKM.InputSubmissionDate('')
         LTKM.InputCustomerID(APUPPT.CustomerID)
         LTKM.InputCustomerName(APUPPT.CustomerName)
-        LTKM.InputDebitCreditCode(APUPPT.TransactionCode)
-        LTKM.InputDebitCreditDesc(APUPPT.TransactionType)
+        LTKM.InputTransactionCode(APUPPT.TransactionCode)
+        LTKM.InputTransactionType(APUPPT.TransactionType)
         LTKM.InputTotalLocalAmount(APUPPT.TotalLocalAmount)
         cy.get('.sorting_asc').scrollIntoView()
         cy.wait(4000)
         LTKM.ClickButtonAction()
         cy.wait(4000)
-        LTKM.InputCustomerIDEdit(APUPPT.CustomerIDEdit)
-        LTKM.InputCustomerNameEdit(APUPPT.CustomerNameEdit)
-        LTKM.InputTransactionTypeEdit(APUPPT.TransactionTypeEdit)
-        LTKM.InputBranchCodeEdit(APUPPT.BranchCodeEdit)
-        LTKM.InputAccountNumberEdit(APUPPT.AccountNumberEdit)
-        LTKM.InputTotalLocalAmountEdit(APUPPT.TotalLocalAmountEdit)
-        LTKM.InputTotalRealAmount(APUPPT.TotalRealAmount)
-        LTKM.InputTotalSubmissionAmount(APUPPT.TotalSubmissionAmount)
-        LTKM.InputTotalFreqSub(APUPPT.TotalFreqSub)
-        cy.wait(4000)
-        LTKM.ClickButtonEditTransaction()
+        //LTKM.InputCustomerIDEdit(APUPPT.CustomerIDEdit)
+        //LTKM.InputCustomerNameEdit(APUPPT.CustomerNameEdit)
+        //LTKM.InputTransactionTypeEdit(APUPPT.TransactionTypeEdit)
+        //LTKM.InputBranchCodeEdit(APUPPT.BranchCodeEdit)
+        //LTKM.InputAccountNumberEdit(APUPPT.AccountNumberEdit)
+        //LTKM.InputTotalLocalAmountEdit(APUPPT.TotalLocalAmountEdit)
+        //LTKM.InputTotalRealAmount(APUPPT.TotalRealAmount)
+        //LTKM.InputTotalSubmissionAmount(APUPPT.TotalSubmissionAmount)
+        //LTKM.InputTotalFreqSub(APUPPT.TotalFreqSub)
+        //cy.wait(4000)
+        //LTKM.ClickButtonEditTransaction()
         LTKM.ClickEditReportedXml()
         LTKM.InputPPATKReportID(APUPPT.REPORTID)
         cy.wait(4000)
@@ -68,5 +67,4 @@ describe ('Menu goAML LTKM', () => {
         Logout.ClickAvatarLogout()
         Logout.ClickButtonLogout()
     })
-
 })

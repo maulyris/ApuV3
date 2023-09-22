@@ -11,33 +11,36 @@ let LTKT = new goamlLTKT
 
 
 describe ('Menu goAML LTKT', () => {
+    let APUPPT;
 
     before('Link Visit', () => {
+        cy.fixture("goaml_LTKT.json").then((data)=>{APUPPT=data;})
         cy.visit ('https://apuppt-v5.jiarsi.com/dev/')
-        Login.Inputusername('superuser')
+        Login.Inputusername('superuser2')
         Login.Inputpassword('Jiarsi1@')
         Login.ClickButtonSignIn()
         cy.wait(4000)
     })
 
     it('goAML LTKT Report', () => {
-        cy.get('.breadcrumb > :nth-child(1) > .text-muted').should('be.visible','content.text','Visualization Dashboard')
+        cy.xpath('//a[@class="text-black text-hover-primary"]').should('be.visible')
         Menu.ClickRegulatoryReport()
         Menu.ClickGoamlLTKT()
         cy.wait(4000)
-        LTKT.InputTransactionDate('2022-10-31')
+        LTKT.InputTransactionDate(APUPPT.TransactionDate)
        // LTKT.InputSubmissionDate('')
-        LTKT.InputCustomerID('100000368')
-        LTKT.InputCustomerName('GAJAH TUNGGAL TBK PT.')
-        LTKT.InputDebitCreditDesc('Debit')
-        LTKT.InputTotalLocalAmount('48983641074')
+        LTKT.InputCustomerID(APUPPT.CustomerID)
+        LTKT.InputCustomerName(APUPPT.CustomerName)
+        LTKT.InputTransactionTypeCode(APUPPT.TransactionTypeCode)
+        LTKT.InputTransactionType(APUPPT.TransactionType)
+        LTKT.InputTotalLocalAmount(APUPPT.TotalLocalAmount)
         cy.get('.sorting_asc').scrollIntoView()
         cy.wait(4000)
         LTKT.ClickButtonAction() 
         LTKT.ClickEditReportedXml()
-        LTKT.InputPPATKReportID('Jiarsi')
+        LTKT.InputPPATKReportID(APUPPT.REPORTID)
         cy.wait(4000)
-        LTKT.InputReportedDate('2023-01-01')
+        LTKT.InputReportedDate(APUPPT.ReportedDate)
         LTKT.ClickButtonSave()
         cy.wait(4000)
         LTKT.ClickButtonOK()

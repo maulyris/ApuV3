@@ -1,0 +1,18 @@
+{
+    "TransactionDate" : "2023-03-03",
+    "SubmissionDate" : "2023-08-16",
+    "CustomerID" : "110058760",
+    "CustomerName" : "INDO MURO KENCANA PT.",
+    "TransactionType" : "CREDIT",
+    "TotalLocalAmount" : "33173939349",
+    "REPORTID" : "Jiarsi123",
+    "ReportedDate" : "2023-09-21",
+
+    "TransactionDate2" : "2023-03-07",
+    "CustomerID2" : "110000367",
+    "CustomerName2" : "GAJAH TUNGGAL TBK PT.",
+    "TransactionType2" : "DEBIT",
+    "TotalLocalAmount2" : "327799966",
+    "REPORTID2" : "JiarsiTesting",
+    "ReportedDate2" : "09-15-2023"
+}

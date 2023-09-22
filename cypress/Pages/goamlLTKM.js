@@ -21,7 +21,7 @@ class goamlLTKM {
         ButtonEditTransaction :() => cy.xpath ('(//a[@class="btn btn-sm btn-primary btn-icon btn-relation"])[1]'),
         ButtonContinue :() => cy.xpath ('//button[text()="Continue "]'),
         ButtonSubmit :() => cy.xpath ('//button[@class="btn btn-lg btn-primary btn_submit"]'),
-        ButtonOK :() => cy.xpath ('//button[text()="OK"]'),
+        ButtonOK :() => cy.xpath ('//button[normalize-space()="OK"]'),
         ButtonClose :() => cy.xpath('//div[@role="dialog"]//button[@type="button"][normalize-space()="Close"]'),
         ButtonExport :() => cy.xpath ('//div[@id="export_view"]'),
         NotSelected :() => cy.xpath ('//button[@class="swal2-confirm btn btn-warning swal2-styled"]'),
@@ -43,6 +43,10 @@ class goamlLTKM {
 
     InputTransactionDate(TransactionDate){
         this.element.TransactionDate().type(TransactionDate).type('{enter}')
+    }
+
+    InputCustomerName(CustomerName){
+        this.element.CustomerName().type(CustomerName).type('{enter}')
     }
 
     InputSubmissionDate(SubmissionDate){
@@ -97,8 +101,8 @@ class goamlLTKM {
         this.element.PPATKReportID().type(PPATKReportID)
     }
 
-    InputReportedDate(ReportedDate){
-        this.element.ReportedDate().type(ReportedDate)
+    InputReportedDate(DATE){
+        this.element.ReportedDate().type(DATE)
     }
 
     ClickButtonSave(){

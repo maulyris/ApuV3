@@ -28,7 +28,7 @@ class MenuElement{
         GoamlLTKT :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div/div//span)[1]'),
         GoamlLTKL :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div[2]/div//span)[1]'),
         SIPENDAR :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div[3]/div//span)[1]'),
-        GoamlLTKM :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div[4]/div//span)[1]'),
+        GoamlLTKM :() => cy.xpath('//span[@class="jss51 Cmt-nav-text moving-left"][normalize-space()="goAML LTKM"]'),
         Screening :() => cy.xpath('(//span[text()="  Screening  "])[1]'),
         Monitoring :() => cy.xpath('(//span[text()="  Monitoring  "])[1]'),
         MonitoringCTR :() => cy.xpath ('(//span[text()="  Monitoring  "]/../following-sibling::div/div//span)[1]'),

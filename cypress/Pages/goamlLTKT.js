@@ -5,7 +5,8 @@ class goamlLTKT {
         SubmissionDate :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[5]/input'),
         CustomerID :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[6]/input'),
         CustomerName :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[7]/input'),
-        DebitCreditDesc :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[8]/input'),
+        TransactionTypeCode :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[8]/input'),
+        TransactionType :()=> cy.xpath('//input[@placeholder="Transaction Type"]'),
         TotalLocalAmount :() => cy.xpath ('//thead[@id="elm_thead"]/tr[2]/th[9]/input'),
         CheckAll :() => cy.xpath ('(//thead[@id="elm_thead"]/tr/th[2])[1]'),
         ChecklistOne :() => cy.xpath ('(//table[@id="DataTables_Table_0"]/tbody/tr/td[2]/div/input)[1]'),
@@ -40,8 +41,12 @@ class goamlLTKT {
         this.element.CustomerName().type(CustomerName).type('{enter}')
     }
 
-    InputDebitCreditDesc(DebitCreditDesc){
-        this.element.DebitCreditDesc().type(DebitCreditDesc).type('{enter}')
+    InputTransactionTypeCode(TransactionTypeCode){
+        this.element.TransactionTypeCode().type(TransactionTypeCode).type('{enter}')
+    }
+
+    InputTransactionType(TransactionType){
+        this.element.TransactionType().type(TransactionType).type('{enter}')
     }
 
     InputTotalLocalAmount(TotalLocalAmount){

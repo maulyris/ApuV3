@@ -1,0 +1,10 @@
+{
+    "TransactionDate":"2023-03-01",
+    "CustomerID" :"42037",
+    "CustomerName" : "MARDIATI",
+    "TransactionTypeCode" : "C",
+    "TransactionType" : "CREDIT",
+    "TotalLocalAmount" : "525000000",
+    "REPORTID" : "Test123",
+    "ReportedDate" : "2023-09-22"
+}

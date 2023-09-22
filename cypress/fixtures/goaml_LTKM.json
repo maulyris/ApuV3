@@ -6,17 +6,7 @@
     "CustomerName" : "KASTINI",
     "TransactionCode" : "D",
     "TransactionType" : "DEBIT",
-    "TotalLocalAmount" : "50,000,000.00",
+    "TotalLocalAmount" : "50000000",
     "REPORTID" : "Jiarsi123",
-    "DATE" : "2023-01-20",
-    "CustomerIDEdit" : "110010204",
-    "CustomerNameEdit" : "KASTINI",
-    "TransactionTypeEdit" : "D",
-    "BranchCodeEdit" : "ID0010401",
-    "AccountNumberEdit" : "1000083597",
-    "TotalLocalAmountEdit" : "50000000.00",
-    "TotalRealAmount" : "0",
-    "TotalSubmissionAmount" : "0",
-    "TotalFreqSub" : "1"
-    
+    "DATE" : "2023-01-20"
 }
