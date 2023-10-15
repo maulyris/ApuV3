@@ -19,11 +19,12 @@ class ExceptionCustomer {
  
         CustomerException :() => cy.xpath('//button[@id="profile-tab"]'),
         CancelException :() => cy.xpath('//button[@id="btn-cancel-exception"]'),
-        ButtonEditRemark :() => cy.xpath('(//a[@class="btn btn-icon btn-primary btn-sm btn_remark"])[1]'),
+        ButtonEditRemark :() => cy.xpath('//a[@class="btn btn-icon btn-secondary btn-sm btn_remark mad-tooltip"]'),
+        ButtonYes :()=> cy.xpath('//button[@class="swal2-confirm btn btn-success swal2-styled"]'),
         ButtonSaveRemark :() => cy.xpath('//button[@id="btn_save_remark"]'),
         ButtonLogException :() => cy.xpath('(//div[@id="myTabContent"]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/a[2])[1]'),
         ButtonCloseLog :() => cy.xpath ('//div[@role="dialog"]//div[@class="modal-footer"]/button'),
-        RemarkCancelException :() => cy.xpath ('//form[@class="form_remark_cancel_exception"]/div/div/textarea'),
+        RemarkCancelException :() => cy.xpath('//form[@class="form_remark_cancel_exception"]/div/div/textarea'),
         SubmitRemarkCancel :() => cy.xpath('//button[@id="btn-save-cancel-exception"]'),
         YesSubmitCancel :() => cy.xpath ('//button[text()="Yes, cancel exception!"]'),
         CustomerIDException :() => cy.xpath('//thead[@id="elm_thead_exception"]/tr[2]/th[6]'),
@@ -123,6 +124,10 @@ class ExceptionCustomer {
         this.element.ButtonSaveRemark().click()
     }
 
+    ClickButtonYes(){
+        this.element.ButtonYes().click()
+    }
+
     ClickButtonLogException(){
         this.element.ButtonLogException().click()
     }
@@ -132,7 +137,7 @@ class ExceptionCustomer {
     }
 
     InputRemarkCancelException(RemarkCancelException){
-        this.element.RemarkCancelException().type(RemarkCancelException)
+        this.element.RemarkCancelException().type(RemarkCancelException).type('{enter}')
     }
 
     ClickSubmitRemarkCancel(){
