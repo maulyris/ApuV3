@@ -2,6 +2,7 @@ class ProfileConductor {
     element = {
         ButtonViewDetail :() => cy.xpath ('(//table[@id="DataTables_Table_0"]/tbody/tr/td[2])[1]'),
         CloseButton :() => cy.xpath ('//button[text()="Close"]'),
+        XCloseButton :() => cy.xpath('//span[@class="svg-icon svg-icon-2x"]'),
         ReportDate :() => cy.xpath ('//input[@data-type="report-date"]'),
         InsertDate :() => cy.xpath ('//input[@data-type="insert-date"]'),
         ConductorTypeCode :() => cy.xpath ('//input[@data-type="conductor-type code"]'),
@@ -20,6 +21,10 @@ class ProfileConductor {
 
     ClickCloseButton(){
         this.element.CloseButton().click()
+    }
+
+    ClickXCloseButton(){
+        this.element.XCloseButton().click()
     }
 
     SearchingReportDate(ReportDate){
@@ -55,7 +60,7 @@ class ProfileConductor {
     }
 
     SearchingBankDesc(BankDesc){
-        this.element.BankDesc().click(BankDesc)
+        this.element.BankDesc().type(BankDesc)
     }
 
     ClickExportButton(){

@@ -1,7 +1,7 @@
 class LoginPage{
     elements = {
-        usernameField:() => cy.get('#floatingInput'),
-        passwordField:() => cy.get('#password'),
+        usernameField:() => cy.xpath('//input[@placeholder="Username"]'),
+        passwordField:() => cy.xpath('//input[@id="password-field"]'),
         SignInButton :() => cy.xpath('//button[@id="kt_login_signin_submit"]')
     }
 

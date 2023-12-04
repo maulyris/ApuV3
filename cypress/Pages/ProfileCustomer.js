@@ -1,191 +1,215 @@
 class CustomerProfile {
     element = {
 
-        RBAButton :() => cy.xpath('(//button[@title="Risk Based Approach"])[1]'),
-        DetailCustomer :() => cy.xpath ('(//button[@title="Detail Customer"])[1]'),
-        CloseDetail :() => cy.xpath ('(//button[@type="button"][normalize-space()="Close"])[1]'),
-        EDDButton :() => cy.xpath('(//button[@title="EDD"])[1]'),
-        PrintReport :() => cy.xpath ('(//button[@title="Print Report"])[1]'),
-        OpeningDate :() => cy.xpath ('//input[@data-type="opening-date"]'),
-        CustomerID :() => cy.xpath ('//input[@data-type="customer-id"]'),
-        CustomerTypeDesc :() => cy.xpath ('//input[@data-type="customer-type"]'),
-        CustomerName :() => cy.xpath ('//input[@data-type="customer-name"]'),
-        BrachCode :() => cy.xpath('//input[@data-type="branch-code"]'),
-        BranchName :() => cy.xpath ('//input[@data-type="branch-name"]'),
-        RBACode :() => cy.xpath ('//input[@data-type="rba-code"]'),
-        RBADesc :() => cy.xpath ('//input[@data-type="rba"]'),
-        BankType:()=> cy.xpath('//input[@data-type="bank-type"]'),
-        IdentityNumber :() => cy.xpath ('//input[@data-type="identity-number"]'),
-        Address :() => cy.xpath ('//input[@data-type="address"]'),
-        CloseRBA:() => cy.xpath('//div[@role="dialog"]//button[@type="button"][normalize-space()="Close"]'),
-        CloseButton :() => cy.xpath ('(//button[@type="button"][normalize-space()="Close"])[1]'),
-        IncomeRBA :() => cy.xpath('//a[@href="#tab_income"]'),
-        ProductRBA :() => cy.xpath('//a[@href="#tab_product"]'),
-        CustomerSuspectRBA :() => cy.xpath('//a[@href="#tab_suspect"]'),
-        IdentityRBA :() => cy.xpath('//a[@href="#tab_identity"]'),
-        OccupationRBA :() => cy.xpath('//a[@href="#tab_occupation"]'),
-        TownCountryRBA :() => cy.xpath('//a[@href="#tab_towncountry"]'),
-        LOBRBA :() => cy.xpath('//a[@href="#tab_lineofbusiness"]'),
-        SDBRBA :() => cy.xpath('//a[@href="#tab_safedepositbox"]'),
-        SourceOfIncomeRBA :() => cy.xpath('//a[@href="#tab_sourceofincome"]'),
-        DeliveryChannelRBA :() => cy.xpath('//a[@href="#tab_deliverychannel"]'),
-        RBAFinal :() => cy.xpath('//a[@href="#tab_rba_final"]'),
-        ExportButton :() => cy.xpath ('//div[@id="export_view"]'),
-        BranchExport :() => cy.xpath('//span[@id="select2-branchcode-container"]'),
-        CustomerTypeExport :() => cy.xpath('//span[@id="select2-customertypecode-container"]'),
-        RiskTypeExport :() => cy.xpath ('//span[@id="select2-risktype-container"]'),
-        BankTypeExport :() => cy.xpath ('//span[@id="select2-banktypecode-container"]'),
-        ValueData :() => cy.xpath ('(//input[@role="searchbox"])[1]'),
-        SaveExport :() => cy.xpath('//button[@id="btn-yes-export"]'),
-        CancelExport :() => cy.xpath ('(//button[normalize-space()="Cancel"])[1]'),
+        Id :() => cy.xpath ("//input[@id='search-customer-id']"),
+        FullName :() => cy.xpath ("//input[@id='search-full-name']"),
+        BranchName :() => cy.xpath ("//select[@id='search-branch-name']"),
+        BankType:()=> cy.xpath("//select[@id='search_bank_desc']"),
+        CustomerTypeDesc :() => cy.xpath ("//select[@id='search_customer_type_desc']"),
+        CIFCreated :() => cy.xpath ("//input[@id='search-cif-created-on']"),
+        Status :() => cy.xpath ("//select[@id='search_customer_status_desc']"),
+        IdentityNumber :() => cy.xpath ("//input[@id='search-identity-card-number']"),
+        Occupation :() => cy.xpath ("//input[@id='search-occupation-business-desc']"),
+        TypeRisk :() => cy.xpath ("//select[@id='search_rba_final_risk_type_desc']"),
+
+
+        //RBAButton :() => cy.xpath('(//bu2tton[@title="Risk Based Approach"])[1]'),
+        DetailCustomer :() => cy.xpath ("//button[@class='btn btn-primary btn-icon btn-view-customer']"),
+        // CloseDetail :() => cy.xpath ('(//button[@type="button"][normalize-space()="Close"])[1]'),
+        // EDDButton :() => cy.xpath('(//button[@title="EDD"])[1]'),
+        // PrintReport :() => cy.xpath ('(//button[@title="Print Report"])[1]'),
+        // OpeningDate :() => cy.xpath ('//input[@data-type="opening-date"]'),
+        
+        
+        
+        // BrachCode :() => cy.xpath('//input[@data-type="branch-code"]'),
+        // RBACode :() => cy.xpath ('//input[@data-type="rba-code"]'),
+        // RBADesc :() => cy.xpath ('//input[@data-type="rba"]'),
+        // Address :() => cy.xpath ('//input[@data-type="address"]'),
+        // CloseRBA:() => cy.xpath('//div[@role="dialog"]//button[@type="button"][normalize-space()="Close"]'),
+        // CloseButton :() => cy.xpath ('(//button[@type="button"][normalize-space()="Close"])[1]'),
+        // IncomeRBA :() => cy.xpath('//a[@href="#tab_income"]'),
+        // ProductRBA :() => cy.xpath('//a[@href="#tab_product"]'),
+        // CustomerSuspectRBA :() => cy.xpath('//a[@href="#tab_suspect"]'),
+        // IdentityRBA :() => cy.xpath('//a[@href="#tab_identity"]'),
+        // OccupationRBA :() => cy.xpath('//a[@href="#tab_occupation"]'),
+        // TownCountryRBA :() => cy.xpath('//a[@href="#tab_towncountry"]'),
+        // LOBRBA :() => cy.xpath('//a[@href="#tab_lineofbusiness"]'),
+        // SDBRBA :() => cy.xpath('//a[@href="#tab_safedepositbox"]'),
+        // SourceOfIncomeRBA :() => cy.xpath('//a[@href="#tab_sourceofincome"]'),
+        // DeliveryChannelRBA :() => cy.xpath('//a[@href="#tab_deliverychannel"]'),
+        // RBAFinal :() => cy.xpath('//a[@href="#tab_rba_final"]'),
+        // ExportButton :() => cy.xpath ('//div[@id="export_view"]'),
+        // BranchExport :() => cy.xpath('//span[@id="select2-branchcode-container"]'),
+        // CustomerTypeExport :() => cy.xpath('//span[@id="select2-customertypecode-container"]'),
+        // RiskTypeExport :() => cy.xpath ('//span[@id="select2-risktype-container"]'),
+        // BankTypeExport :() => cy.xpath ('//span[@id="select2-banktypecode-container"]'),
+        // ValueData :() => cy.xpath ('(//input[@role="searchbox"])[1]'),
+        // SaveExport :() => cy.xpath('//button[@id="btn-yes-export"]'),
+        // CancelExport :() => cy.xpath ('(//button[normalize-space()="Cancel"])[1]'),
 
     }
 
-    ClickRBAButton(){
-        this.element.RBAButton().click()
-    }
 
     ClickDetailCustomer(){
         this.element.DetailCustomer().click()
     }
 
-    ClickEDDButton(){
-        this.element.EDDButton().click()
+    // ClickRBAButton(){
+    //     this.element.RBAButton().click()
+    // }
+
+    // ClickEDDButton(){
+    //     this.element.EDDButton().click()
+    // }
+
+    // ClickPrintReport(){
+    //     this.element.PrintReport().
+    //     invoke('removeAttr', 'https://apuppt-v5.jiarsi.com/dev/customer/customer_profile/report?id=110373386&groupsetup=f_customerinforba').then(myLink => {
+    //         cy.visit('https://apuppt-v5.jiarsi.com/dev/en/customer/customer_profile')
+    //     })
+    // }
+
+    InputId(Id){
+        this.element.Id().type(Id).type('{enter}')
     }
 
-    ClickPrintReport(){
-        this.element.PrintReport().
-        invoke('removeAttr', 'https://apuppt-v5.jiarsi.com/dev/customer/customer_profile/report?id=110373386&groupsetup=f_customerinforba').then(myLink => {
-            cy.visit('https://apuppt-v5.jiarsi.com/dev/en/customer/customer_profile')
-        })
-    }
-
-    InputOpeningDate(OpeningDate){
-        this.element.OpeningDate().type(OpeningDate).type('{enter}')
-    }
-
-    InputCustomerID(CustomerID){
-        this.element.CustomerID().type(CustomerID).type('{enter}')
-    }
-
-    InputCustomerTypeDesc(CustomerTypeDesc){
-        this.element.CustomerTypeDesc().type(CustomerTypeDesc).type('{enter}')
-    }
-
-    InputCustomerName(CustomerName){
-        this.element.CustomerName().type(CustomerName).type('{enter}')
-    }
-
-    InputBrachCode(BrachCode){
-        this.element.BrachCode().type(BrachCode).type('{enter}')
+    InputFullName(FullName){
+        this.element.FullName().type(FullName).type('{enter}')
     }
 
     InputBranchName(BranchName){
         this.element.BranchName().type(BranchName).type('{enter}')
     }
 
-    InputRBACode(RBACode){
-        this.element.RBACode().type(RBACode).type('{enter}')
+    InputBankType(BankType){
+        this.element.BankType().type(BankType).type('{enter}')
     }
 
-    InputRBADesc(RBADesc){
-        this.element.RBADesc().type(RBADesc).type('{enter}')
+    InputCustomerTypeDesc(CustomerTypeDesc){
+        this.element.CustomerTypeDesc().type(CustomerTypeDesc).type('{enter}')
+    }
+
+    InputCIFCreated(CIFCreated){
+        this.element.CIFCreated().type(CIFCreated).type('{enter}')
+    }
+
+    InputStatus(Status){
+        this.element.Status().type(Status).type('{enter}')
     }
 
     InputIdentityNumber(IdentityNumber){
         this.element.IdentityNumber().type(IdentityNumber).type('{enter}')
     }
 
-    InputBankType(BankType){
-        this.element.BankType().type(BankType).type('{enter}')
+    InputOccupation(Occupation){
+        this.element.Occupation().type(Occupation).type('{enter}')
     }
 
-    InputAddress(Address){
-        this.element.Address().type(Address).type('{enter}')
+    InputTypeRisk(TypeRisk){
+        this.element.TypeRisk().type(TypeRisk).type('{enter}')
     }
 
-    ClickCloseRBA(){
-        this.element.CloseRBA().click()
-    }
+    // InputBrachCode(BrachCode){
+    //     this.element.BrachCode().type(BrachCode).type('{enter}')
+    // }
 
-    ClickCloseButton(){
-        this.element.CloseButton().click()
-    }
+    // InputRBACode(RBACode){
+    //     this.element.RBACode().type(RBACode).type('{enter}')
+    // }
 
-    ClickIncomeRBA(){
-        this.element.IncomeRBA().click()
-    }
+    // InputRBADesc(RBADesc){
+    //     this.element.RBADesc().type(RBADesc).type('{enter}')
+    // }
 
-    ClickProductRBA(){
-        this.element.ProductRBA().click()
-    }
+    // InputAddress(Address){
+    //     this.element.Address().type(Address).type('{enter}')
+    // }
 
-    ClickCustomerSuspectRBA(){
-        this.element.CustomerSuspectRBA().click()
-    }
+    // ClickCloseRBA(){
+    //     this.element.CloseRBA().click()
+    // }
 
-    ClickIdentityRBA(){
-        this.element.IdentityRBA().click()
-    }
+    // ClickCloseButton(){
+    //     this.element.CloseButton().click()
+    // }
 
-    ClickOccupationRBA(){
-        this.element.OccupationRBA().click()
-    }
+    // ClickIncomeRBA(){
+    //     this.element.IncomeRBA().click()
+    // }
 
-    ClickTownCountryRBA(){
-        this.element.TownCountryRBA().click()
-    }
+    // ClickProductRBA(){
+    //     this.element.ProductRBA().click()
+    // }
 
-    ClickLOBRBA(){
-        this.element.LOBRBA().click()
-    }
+    // ClickCustomerSuspectRBA(){
+    //     this.element.CustomerSuspectRBA().click()
+    // }
 
-    ClickSDBRBA(){
-        this.element.SDBRBA().click()
-    }
+    // ClickIdentityRBA(){
+    //     this.element.IdentityRBA().click()
+    // }
 
-    ClickSourceOfIncomeRBA(){
-        this.element.SourceOfIncomeRBA().click()
-    }
+    // ClickOccupationRBA(){
+    //     this.element.OccupationRBA().click()
+    // }
 
-    ClickDeliveryChannelRBAn(){
-        this.element.DeliveryChannelRBA().click()
-    }
+    // ClickTownCountryRBA(){
+    //     this.element.TownCountryRBA().click()
+    // }
 
-    ClickRBAFinal(){
-        this.element.RBAFinal().click()
-    }
+    // ClickLOBRBA(){
+    //     this.element.LOBRBA().click()
+    // }
 
-    ClickExportButton(){
-        this.element.ExportButton().click()
-    }
+    // ClickSDBRBA(){
+    //     this.element.SDBRBA().click()
+    // }
 
-    ClickBranchExport(){
-        this.element.BranchExport().click()
-    }
+    // ClickSourceOfIncomeRBA(){
+    //     this.element.SourceOfIncomeRBA().click()
+    // }
 
-    ClickCustomerTypeExport(){
-        this.element.CustomerTypeExport().click()
-    }
+    // ClickDeliveryChannelRBAn(){
+    //     this.element.DeliveryChannelRBA().click()
+    // }
 
-    ClickRiskTypeExport(){
-        this.element.RiskTypeExport().click()
-    }
+    // ClickRBAFinal(){
+    //     this.element.RBAFinal().click()
+    // }
 
-    ClickBankTypeExport(){
-        this.element.BankTypeExport().click()
-    }
+    // ClickExportButton(){
+    //     this.element.ExportButton().click()
+    // }
 
-    InputValueData(ValueData){
-        this.element.ValueData().type(ValueData).type('{enter}')
-    }
+    // ClickBranchExport(){
+    //     this.element.BranchExport().click()
+    // }
 
-    ClickSaveExport(){
-        this.element.SaveExport().
-        invoke('removeAttr', 'https://apuppt-v5.jiarsi.com/dev/customer/customer_profile/to_csv?groupsetup').then(myLink => {
-            cy.visit('https://apuppt-v5.jiarsi.com/dev/en/customer/customer_profile')
-        })
-    }
+    // ClickCustomerTypeExport(){
+    //     this.element.CustomerTypeExport().click()
+    // }
+
+    // ClickRiskTypeExport(){
+    //     this.element.RiskTypeExport().click()
+    // }
+
+    // ClickBankTypeExport(){
+    //     this.element.BankTypeExport().click()
+    // }
+
+    // InputValueData(ValueData){
+    //     this.element.ValueData().type(ValueData).type('{enter}')
+    // }
+
+    ClickDetailCustomer(){
+          this.element.DetailCustomer().invoke('removeAttr','target').click()
+          cy.url({ timeout: 10000 }).should('include','https://apuppt.jiarsi.com/dev-3.1/id/customer_profile_form') 
+      }
+
+    // ClickDetailCustomer(){
+    //     this.element.DetailCustomer().invoke('removeAttr','https://apuppt.jiarsi.com/dev-3.1/id/customer_profile').then(myLink=> {cy.visit('https://apuppt.jiarsi.com/dev-3.1/id/customer_profile_form')})
+    //     }
 
     ClickCancelExport(){
         this.element.CancelExport().click()

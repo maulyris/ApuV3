@@ -1,9 +1,10 @@
 class MenuElement{
     elements = {
-        GeneralInfo:() => cy.xpath('(//span[text()="  General Info  "])[1]'),
-        Profile:() => cy.xpath('(//span[text()="  Profil  "])[1]'),
-        ProfileCustomer:() => cy.xpath('(//span[text()="  Profil  "]/../following-sibling::div//span)[1]'),
-        ProfileAccount:() => cy.xpath('//span[text()="  Profil  "]/../following-sibling::div[2]//span'),
+        Customer:() => cy.xpath("//span[@class='kt-menu__link-text font-weight-bold'][normalize-space()='Customer']"),
+        CustomerProfile:() => cy.xpath("//span[normalize-space()='Customer Profile']"),
+        CustomerSuspect:() => cy.xpath("//span[normalize-space()='Customer Suspect']"),
+        CustomerEDD:() => cy.xpath("//span[normalize-space()='Customer EDD']"),
+
         ProfileManagement:() => cy.xpath('(//span[text()="  Management  "])[1]'),
         ProfileConductor:() => cy.xpath('(//span[text()="  Conductor  "])[1]'),
         ProfileWalkInCustomer:() => cy.xpath('(//span[text()="  Walk In Customer  "])[1]'),
@@ -44,20 +45,20 @@ class MenuElement{
 
     }
 
-    ClickGeneralInfo(){
-        this.elements.GeneralInfo().click()
+    ClickCustomer(){
+        this.elements.Customer().click()
     }
 
-    ClickProfile(){
-        this.elements.Profile().click()
+    ClickCustomerProfile(){
+        this.elements.CustomerProfile().click()
     }
 
-    ClickProfileCustomer(){
-        this.elements.ProfileCustomer().click()
+    ClickCustomerSuspect(){
+        this.elements.CustomerSuspect().click()
     }
 
-    ClickProfileManagement(){
-        this.elements.ProfileManagement().click()
+    ClickCustomerEDD(){
+        this.elements.CustomerEDD().click()
     }
 
     ClickProfileAccount(){

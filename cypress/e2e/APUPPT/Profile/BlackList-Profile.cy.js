@@ -1,3 +1,4 @@
+//udah gak ada menu blacklist customer
 import LoginPage from "../../../Pages/loginPage"
 import MenuElement from "../../../Pages/Menu"
 import LogoutPage from "../../../Pages/LogoutPage"

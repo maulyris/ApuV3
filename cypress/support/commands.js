@@ -24,6 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+
+
 Cypress.Commands.add('loginTheInternet',(username,password)=>{
     cy.visit('https://the-internet.herokuapp.com/login')
     cy.get('#username').type(username)
