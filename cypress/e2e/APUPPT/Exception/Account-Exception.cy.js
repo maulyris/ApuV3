@@ -2,15 +2,13 @@ import LoginPage from "../../../Pages/loginPage"
 import LogoutPage from "../../../Pages/LogoutPage"
 import MenuElement from "../../../Pages/Menu"
 import ExceptionAccount from "../../../Pages/ExceptionAccount"
-import ApprovalList from "../../../Pages/ApprovalList"
 
 let Login = new LoginPage
 let Logout = new LogoutPage
 let Menu = new MenuElement
 let AccountExceptiion = new ExceptionAccount
-let Approval = new ApprovalList
 
-describe ('Account Exception', ()=>
+describe ('Account Exception',()=>
 {
     let APUPPT;
 
@@ -18,16 +16,17 @@ describe ('Account Exception', ()=>
         cy.fixture("Account_Exception.json").then((data) => {
             APUPPT=data;
         })
-        cy.visit ('https://apuppt-v5.jiarsi.com/dev/')
+        cy.visit ('https://apuppt.jiarsi.com/dev-3.1/')
         Login.Inputusername('superuser1')
         Login.Inputpassword('Jiarsi1@')
         Login.ClickButtonSignIn()
         cy.wait(4000)
     })
 
+//cy.xpath('//h2[@id="swal2-title"][contains(text(), "No selected item(s) found")]').should('exist'),{ timeout: 10000 };
 
     it('Account Exception List', () => {
-        cy.get('.breadcrumb > :nth-child(1) > .text-black').should('be.visible','content.text','Visualization Dashboard')
+        cy.xpath('(//h2[@class="kt-infobox__title"])[1]').should('be.visible','content.text','Caution')
         Menu.ClickGeneralInfo()
         Menu.ClickException()
         Menu.ClickAccountException()

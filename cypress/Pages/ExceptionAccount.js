@@ -2,74 +2,46 @@ class ExceptionAccount {
 
     element = {
 
-        AccountListTab :() => cy.xpath ('//button[@id="home-tab"]'),
+        AccountListTab :() => cy.xpath ('(//a[normalize-space()="Account List"])[1]'),
         MakeException :() => cy.xpath('//button[@id="btn-make-exception"]'),
-        RemarkColumn :() => cy.xpath('//form[@class="form_remark_exception"]/div/div/textarea'),
-        SubmitRemark :() => cy.xpath ('//button[@id="btn-save-make-exception"]'),
-        YesSubmit :() => cy.xpath ('//button[text()="Yes, make exception!"]'),
-        OKButton :() => cy.xpath('//button[@class="swal2-confirm btn btn-success swal2-styled"]'),
-        ButtonViewDetail :() => cy.xpath ('(//a[@title="Log"])[1]'),
-        ButtonCloseList :() => cy.xpath ('(//button[@class="btn btn-light"])[4]'),
-        BankDescList :() => cy.xpath('(//input[@data-type="bank-type"])[1]'),
-        CustomerIDList :() => cy.xpath('(//input[@data-type="customer-id"])[1]'),
-        CustomerNameList :() => cy.xpath('(//input[@data-type="customer-name"])[1]'),
-        BranchDescList :() => cy.xpath('(//input[@data-type="branch-name"])[1]'),
-        CTRList :() => cy.xpath('(//input[@class="form-check-input chk_ctr"])[1]'),
-        UTRList :() => cy.xpath('(//input[@class="form-check-input chk_str"])[1]'),
-        ButtonExportList :() => cy.xpath ('//div[@id="home"]/div/div/a'),
+        YesMakeException :() => cy.xpath ('//button[normalize-space()="Yes, make exception!"]'),
+        OKButton :() => cy.xpath('(//button[normalize-space()="OK"])[1]'),
+        CustomerIDList :() => cy.xpath('(//input[@id="search-customer-id"])[1]'),
+        CustomerNameList :() => cy.xpath('(//input[@id="search-account-name"])[1]'),
+        BranchDescList :() => cy.xpath('(//input[@id="search-branch-name"])[1]'),
+        AccountNumberList :() => cy.xpath('(//input[@id="search-account-number"])[1]'),
+        AccountDescList :() => cy.xpath('(//input[@id="search-product-desc"])[1]'),
+        CTRList :() => cy.xpath('//input[@id="chk_ctr"]'),
+        UTRList :() => cy.xpath('//input[@id="chk_str"]'),
 
-        AccountException :() => cy.xpath('//button[@id="profile-tab"]'),
+        AccountExceptionTab :() => cy.xpath('//a[normalize-space()="Account Exception List"]'),
         CancelException :() => cy.xpath('//button[@id="btn-cancel-exception"]'),
-        ButtonEditRemark :() => cy.xpath('(//a[@class="btn btn-icon btn-secondary btn-sm btn_remark"])[1]'),
-        InputRemark :() => cy.xpath('(//textarea[@name="remarks"])[1]'),
-        ButtonSaveRemark :() => cy.xpath('//button[@id="btn_save_remark"]'),
-        ButtonLogException :() => cy.xpath('(//div[@id="myTabContent"]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/a[2])[1]'),
-        ButtonCloseLog :() => cy.xpath ('//div[@role="dialog"]//button[@type="button"][normalize-space()="Close"]'),
-        RemarkCancelException :() => cy.xpath ('//form[@class="form_remark_cancel_exception"]/div/div/textarea'),
-        SubmitRemarkCancel :() => cy.xpath('//button[@id="btn-save-cancel-exception"]'),
-        YesSubmitCancel :() => cy.xpath ('//button[text()="Yes, cancel exception!"]'),
-        BankDescException :() => cy.xpath('(//input[@data-type="bank-type"])[2]'),
+        YesCancelException :() => cy.xpath ('//button[text()="Yes, cancel exception!"]'),
         CustomerIDException :() => cy.xpath('(//input[@data-type="customer-id"])[2]'),
         CustomerNameException :() => cy.xpath('(//input[@data-type="customer-name"])[2]'),
-        BranchDescException :() => cy.xpath('(//input[@data-type="branch-name"])[2]'),
-        CTRException :() => cy.xpath('(//input[@class="form-check-input chk_ctr"])[1]'),
-        //CTRException :() => cy.get(':nth-child(3) > .form-check > .form-check-input'),
-        UTRException :() => cy.xpath('(//input[@class="form-check-input chk_str"])[2]'),
-        //UTRException :() => cy.get('#DataTables_Table_0 > tbody > .odd > :nth-child(4) > .form-check > .form-check-input'),
-        ButtonExportException :() => cy.xpath ('//div[@id="profile"]/div/div/a')
+        AccountNumberException :() => cy.xpath ('(//input[@id="search-account-number"])[2]'),
+        AccountDescException :() => cy.xpath ('(//input[@id="search-product-desc"])[2]'),
+        BranchNameException :() => cy.xpath('((//input[@id="search-branch-name"])[2]'),
+        Author :() => cy.xpath ('//input[@id="search-created-by-name"]'),
+        DateException :() => cy.xpath ('//input[@id="search-acc-created-on"]'),
+        CTRException :() => cy.xpath('//input[@id="chk_ex_ctr"]'),
+        UTRException :() => cy.xpath('//input[@id="chk_ex_str"]')
     }
 
+    ClickAccountExceptionTab(){
+        this.element.AccountExceptionTab().click()
+    }
 
     ClickMakeException(){
         this.element.MakeException().click()
     }
 
-    ClickAccountListTab(){
-        this.element.AccountListTab().click()
-    }
-
-    InputRemarkColumn(RemarkColumn){
-        this.element.RemarkColumn().type(RemarkColumn)
-    }
-
-    ClickSubmitRemark(){
-        this.element.SubmitRemark().click()
-    }
-
-    ClickYesSubmit(){
-        this.element.YesSubmit().click()
+    ClickYesMakeException(){
+        this.element.YesMakeException().click()
     }
 
     ClickOKButton(){
         this.element.OKButton().click()
-    }
-    
-    ClickButtonViewDetail(){
-        this.element.ButtonViewDetail().click()
-    }
-
-    ClickButtonCloseList(){
-        this.element.ButtonCloseList().click()
     }
 
     SearchingCustomerIDList(CustomerIDList){
@@ -84,8 +56,12 @@ class ExceptionAccount {
         this.element.BranchDescList().type(BranchDescList).type('{enter}')
     }
 
-    SearchingBankDescList(BankDescList){
-        this.element.BankDescList().type(BankDescList).type('{enter}')
+    SearchingAccountNumberList(AccountNumberList){
+        this.element.AccountNumberList().type(AccountNumberList).type('{enter}')
+    }
+
+    SearchingAccountDescList(AccountDescList){
+        this.element.AccountDescList().type(AccountDescList).type('{enter}')
     }
 
     ClickCTRList(){
@@ -94,13 +70,6 @@ class ExceptionAccount {
 
     ClickUTRList(){
         this.element.UTRList().click()
-    }
-
-    ClickButtonExportList(){
-        this.element.ButtonExportList().
-        invoke('removeAttr', 'https://apuppt-v5.jiarsi.com/dev/exception/account_exception/to_csv').then(myLink => {
-            cy.visit('https://apuppt-v5.jiarsi.com/dev/en/exception/account_exception'); 
-        })
     }
 
 //                                    _       ______                    _   _             
@@ -112,40 +81,12 @@ class ExceptionAccount {
 //                                                               | |                      
 //                                                               |_|                      
 
-    ClickAccountException(){
-        this.element.AccountException().click()
+    ClickAccountExceptionTab(){
+        this.element.AccountExceptionTab().click()
     }
 
     ClickCancelException(){
         this.element.CancelException().click()
-    }
-
-    ClickButtonEditRemark(){
-        this.element.ButtonEditRemark().click()
-    }
-
-    ClickButtonSaveRemark(){
-        this.element.ButtonSaveRemark().click()
-    }
-
-    ClickButtonLogException(){
-        this.element.ButtonLogException().click()
-    }
-
-    ClickButtonCloseLog(){
-        this.element.ButtonCloseLog().click()
-    }
-
-    InputRemarkCancelException(RemarkCancelException){
-        this.element.RemarkCancelException().type(RemarkCancelException)
-    }
-
-    ClickSubmitRemarkCancel(){
-        this.element.SubmitRemarkCancel().click()
-    }
-
-    ClickInputRemark(InputRemark){
-        this.element.InputRemark().type(InputRemark).type('{enter}')
     }
 
     ClickYesSubmitCancel(){
@@ -160,12 +101,24 @@ class ExceptionAccount {
         this.element.CustomerNameException().type(CustomerNameException).type('{enter}')
     }
 
-    SearchingBranchDescException(BranchDescException){
-        this.element.BranchDescException().type(BranchDescException).type('{enter}')
+    SearchingAccountNumberException(AccountNumberException){
+        this.element.AccountNumberException().type(AccountNumberException).type('{enter}')
     }
 
-    SearchingkBankDescException(BankDescException){
-        this.element.BankDescException().type(BankDescException).type('{enter}')
+    SearchingAccountDescException(AccountDescException){
+        this.element.AccountDescException().type(AccountDescException).type('{enter}')
+    }
+
+    SearchingBranchNameException(BranchNameException){
+        this.element.BranchNameException().type(BranchNameException).type('{enter}')
+    }
+
+    SearchingAuthor(Author){
+        this.element.Author().type(Author).type('{enter}')
+    }
+
+    SearchingDateException(DateException){
+        this.element.DateException().type(DateException).type('{enter}')
     }
 
     ClickCTRException(){
@@ -174,17 +127,6 @@ class ExceptionAccount {
 
     ClickUTRException(){
         this.element.UTRException().click()
-    }
-
-    ClickButtonExportList(){
-        this.element.ButtonExportList().
-        invoke('removeAttr', 'https://apuppt-v5.jiarsi.com/dev/exception/account_exception/to_csv2').then(myLink => {
-            cy.visit('https://apuppt-v5.jiarsi.com/dev/en/exception/account_exception'); 
-        })
-    }
-
-    ClickButtonExportException(){
-        this.element.ButtonExportException().click()
     }
 }
 export default ExceptionAccount

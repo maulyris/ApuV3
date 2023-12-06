@@ -1,218 +1,216 @@
-class MenuElement{
-    elements = {
-        Customer:() => cy.xpath("//span[@class='kt-menu__link-text font-weight-bold'][normalize-space()='Customer']"),
-        CustomerProfile:() => cy.xpath("//span[normalize-space()='Customer Profile']"),
-        CustomerSuspect:() => cy.xpath("//span[normalize-space()='Customer Suspect']"),
-        CustomerEDD:() => cy.xpath("//span[normalize-space()='Customer EDD']"),
+class Menupage {
+    element ={
+        "Home" :() => cy.xpath ('//i[@class="la la-home"]'),
+        "Customer" :()=> cy.xpath('(//*[contains(text(),"Customer") and @class="kt-menu__link-text font-weight-bold"])[1]'),
+        "CustomerProfile" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Customer Profile")]'),
+        "Workflow" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Workflow")]'),
+        "CashTransaction" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Cash Transaction")]'),
+        "UnsualTransaction" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Unusual Transaction List")]'),
+        "BulkCTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Bulk CTR")]'),
+        "BulkUTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Bulk UTR")]'),
+        "Monitoring" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Monitoring")])[1]'),
+        "MonitoringCTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Cash Monitoring")]'),
+        "MonitoringUTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Suspicious Monitoring")]'),
+        "Reports" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Reports")]'),
+        "ReportCTRXML" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"CTR XML")]'),
+        "ReportSIPESAT" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"SIPESAT")]'),
+        "ReportsCIFGanda" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"CIF Ganda")]'),
+        "ReportsCTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"CTR Report")]'),
+        "ReportsUTR" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"UTR Report")]'),
+        "ReportsRBA" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"RBA Report")])[1]'),
+        "ReportsSuspect" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Suspect Report")]'),
+        "ReportsException" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Exception Report")]'),
+        "ReportsBranchRBA" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Branch RBA Report")]'),
+        "ReportsUser" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"User Report")]'),
+        "ReportsAccount" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Account Report")]'),
+        "ReportsLTKL" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Branch RBA Report")]'),
+        "GoAML" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"GoAML")]'),
+        "GoAMLLTKL" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"LTKL")])[1]'),
+        "RegulatorInquiry" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"REGULATOR INQUIRY")]'),
+        "WICConductor" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"WIC / Conductor")])[1]'),
+        "WICConductorProfile" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"WIC / Conductor Profile")]'),
+        "BeneficialOwner" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Beneficial Owner")]'),
+        "BeneficialOwnerProfile" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Beneficial Owner Profile")]'),
+        "Parameter" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Parameter")])[1]'),
+        "GeneralParameter" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"General Parameter")]'),
+        "PEPWatchList" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"PEP & Watch List")]'),
+        "NegativeList" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Negative List")]'),
+        "UserManagement" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"User Management")]'),
+        "User" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"User")])[1]'),
+        "Role" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Role")]'),
+        "SIPENDAR" :() => cy.xpath ('(//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"SIPENDAR")])[1]'),
+        "SIPENDARPROAKTIF" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"SIPENDAR PROAKTIF")]'),
+        "SIPENDARINQUIRY" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"SIPENDAR INQUIRY")]'),
 
-        ProfileManagement:() => cy.xpath('(//span[text()="  Management  "])[1]'),
-        ProfileConductor:() => cy.xpath('(//span[text()="  Conductor  "])[1]'),
-        ProfileWalkInCustomer:() => cy.xpath('(//span[text()="  Walk In Customer  "])[1]'),
-        ProfileBeneficialOwner:() => cy.xpath ('(//span[text()="  Beneficial Owner  "])[1]'),
-        ProfileBlackListCustomer:() => cy.xpath ('(//span[text()="  Blacklist Customer  "])[1]'),
-        ProfileWealthManagement :() => cy.xpath ('(//span[text()="  Wealth Management  "])[1]'),
-        Exception:() => cy.xpath ('(//span[text()="  Exception  "])[1]'),
-        CustomerException :() => cy.xpath('(//span[text()="  Exception  "]/../following-sibling::div//span)[1]'),
-        AccountException :() => cy.xpath ('(//span[text()="  Exception  "]/../following-sibling::div[2]//span)[1]'),
-        SectorException :() => cy.xpath('(//span[text()="  Exception  "]/../following-sibling::div[3]//span)[1]'),
-        Suspected :() => cy.xpath ('(//span[text()="  Suspected  "])[1]'),
-        SucpectedCustomer :() => cy.xpath ('(//span[text()="  Suspected  "]/../following-sibling::div//div/a)[1]'),
-        SuspectedWalkInCustomer :() => cy.xpath ('(//span[text()="  Suspected  "]/../following-sibling::div[2]//div/a)[1]'),
-        SuspectedConductor :() => cy.xpath ('(//span[text()="  Suspected  "]/../following-sibling::div[3]//div/a)[1]'),
-        Branch :() => cy.xpath ('(//span[text()="  Branch  "])[1]'),
-        Workflow :() => cy.xpath ('(//span[text()="  Workflow  "])[1]'),
-        CashTransaction:() => cy.xpath('(//span[text()="  Workflow  "]/../following-sibling::div//span)[1]'),
-        UnusualTransaction :() => cy.xpath('(//span[text()="  Workflow  "]/../following-sibling::div[2]//span)[1]'),
-        BulkUnusualTransaction :() => cy.xpath('(//span[text()="  Workflow  "]/../following-sibling::div[3]//span)[1]'),
-        BulkCashTransaction :() => cy.xpath('(//span[text()="  Workflow  "]/../following-sibling::div[4]//span)[1]'),
-        RegulatoryReport :() => cy.xpath ('(//span[text()="  Regulatory Report  "])[1]'),
-        GoamlLTKT :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div/div//span)[1]'),
-        GoamlLTKL :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div[2]/div//span)[1]'),
-        SIPENDAR :() => cy.xpath('(//span[text()="  Regulatory Report  "]/../following-sibling::div[3]/div//span)[1]'),
-        GoamlLTKM :() => cy.xpath('//span[@class="jss51 Cmt-nav-text moving-left"][normalize-space()="goAML LTKM"]'),
-        Screening :() => cy.xpath('(//span[text()="  Screening  "])[1]'),
-        Monitoring :() => cy.xpath('(//span[text()="  Monitoring  "])[1]'),
-        MonitoringCTR :() => cy.xpath ('(//span[text()="  Monitoring  "]/../following-sibling::div/div//span)[1]'),
-        MonitoringUTR :() => cy.xpath ('(//span[text()="  Monitoring  "]/../following-sibling::div[2]/div//span)[1]'),
-        MonitoringReference :() => cy.xpath ('(//span[text()="  Monitoring  "]/../following-sibling::div[3]/div//span)[1]'),
-        Report :() => cy.xpath ('(//span[text()="  Report  "])[1]'),
-        ApprovalList :() => cy.xpath ('(//span[text()="  Approval List  "])[1]'),
-        CustomerOnBoarding :() => cy.xpath ('(//span[text()="  Customer Onboarding  "])[1]'),
-        LogActivity :() => cy.xpath('(//span[text()="  Log Activity  "])[1]'),
-        UserManagement :() => cy.xpath('(//span[text()="  User Management  "])[1]'),
-        User :() => cy.xpath('(//span[text()="  User Management  "]/../following-sibling::div/div//span)[1]'),
-        Role :() => cy.xpath ('(//span[text()="  User Management  "]/../following-sibling::div[2]/div//span)[1]')
+    }
 
+    ClickHome(){
+        this.element.Home().click()
     }
 
     ClickCustomer(){
-        this.elements.Customer().click()
+        this.element.Customer().click()
     }
 
     ClickCustomerProfile(){
-        this.elements.CustomerProfile().click()
-    }
-
-    ClickCustomerSuspect(){
-        this.elements.CustomerSuspect().click()
-    }
-
-    ClickCustomerEDD(){
-        this.elements.CustomerEDD().click()
-    }
-
-    ClickProfileAccount(){
-        this.elements.ProfileAccount().click()
-    }
-
-    ClickProfileConductor(){
-        this.elements.ProfileConductor().click()
-    }
-
-    ClickProfileWalkInCustomer(){
-        this.elements.ProfileWalkInCustomer().click()
-    }
-
-    ClickProfileBeneficialOwner(){
-        this.elements.ProfileBeneficialOwner().click()
-    }
-
-    ClickProfileBlackListCustomer(){
-        this.elements.ProfileBlackListCustomer().click()
-    }
-
-    ClickProfileWealthManagement(){
-        this.elements.ProfileWealthManagement().click()
-    }
-
-    ClickException(){
-        this.elements.Exception().click()
-    }
-
-    ClickCustomerException(){
-        this.elements.CustomerException().click()
-    }
-
-    ClickAccountException(){
-        this.elements.AccountException().click()
-    }
-
-    ClickSectorException(){
-        this.elements.SectorException().click()
-    }
-
-    ClickSuspected(){
-        this.elements.Suspected().click()
-    }
-
-    ClickSucpectedCustomer(){
-        this.elements.SucpectedCustomer().click()
-    }
-
-    ClickSuspectedWalkInCustomer(){
-        this.elements.SuspectedWalkInCustomer().click()
-    }
-
-    ClickSuspectedConductor(){
-        this.elements.SuspectedConductor().click()
-    }
-
-    ClickBranch(){
-        this.elements.Branch().click()
+        this.element.CustomerProfile().click()
     }
 
     ClickWorkflow(){
-        this.elements.Workflow().click()
+        this.element.Workflow().click()
     }
 
     ClickCashTransaction(){
-        this.elements.CashTransaction().click()
+        this.element.CashTransaction().click()
     }
 
-    ClickUnusualTransaction(){
-        this.elements.UnusualTransaction().click()
+    ClickUnsualTransaction(){
+        this.element.UnsualTransaction().click()
     }
 
-    ClickBulkUnusualTransaction(){
-        this.elements.BulkUnusualTransaction().click()
+    ClickBulkCTR(){
+        this.element.BulkCTR().click()
     }
 
-    ClickBulkCashTransaction(){
-        this.elements.BulkCashTransaction().click()
-    }
-
-    ClickRegulatoryReport(){
-        this.elements.RegulatoryReport().click()
-    }
-
-    ClickGoamlLTKT(){
-        this.elements.GoamlLTKT().click()
-    }
-
-    ClickGoamlLTKL(){
-        this.elements.GoamlLTKL().click()
-    }
-
-    ClickSIPENDAR(){
-        this.elements.SIPENDAR().click()
-    }
-
-    ClickGoamlLTKM(){
-        this.elements.GoamlLTKM().click()
-    }
-
-    ClickScreening(){
-        this.elements.Screening().click()
+    ClickBulkUTR(){
+        this.element.BulkUTR().click()
     }
 
     ClickMonitoring(){
-        this.elements.Monitoring().click()
+        this.element.Monitoring().click()
     }
 
     ClickMonitoringCTR(){
-        this.elements.MonitoringCTR().click()
-    }
-
-    ClickUnusualTransaction(){
-        this.elements.UnusualTransaction().click()
+        this.element.MonitoringCTR().click()
     }
 
     ClickMonitoringUTR(){
-        this.elements.MonitoringUTR().click()
+        this.element.MonitoringUTR().click()
     }
 
-    ClickMonitoringReference(){
-        this.elements.MonitoringReference().click()
+    ClickReports(){
+        this.element.Reports().click()
     }
 
-    ClickReport(){
-        this.elements.Report().click()
+    ClickReportCTRXML(){
+        this.element.ReportCTRXML().click()
     }
 
-    ClickApprovalList(){
-        this.elements.ApprovalList().click()
+    ClickReportSIPESAT(){
+        this.element.ReportSIPESAT().click()
     }
 
-    ClickCustomerOnBoarding(){
-        this.elements.CustomerOnBoarding().click()
+    ClickReportsCIFGanda(){
+        this.element.ReportsCIFGanda().click()
     }
 
-    ClickLogActivity(){
-        this.elements.LogActivity().click()
+    ClickReportsCTR(){
+        this.element.ReportsCTR().click()
+    }
+
+    ClickReportsUTR(){
+        this.element.ReportsUTR().click()
+    }
+
+    ClickReportsRBA(){
+        this.element.ReportsRBA().click()
+    }
+
+    ClickReportsSuspect(){
+        this.element.ReportsSuspect().click()
+    }
+
+    ClickReportsException(){
+        this.element.ReportsException().click()
+    }
+
+    ClickReportsBranchRBA(){
+        this.element.ReportsBranchRBA().click()
+    }
+
+    ClickReportsUser(){
+        this.element.ReportsUser().click()
+    }
+
+    ClickReportsAccount(){
+        this.element.ReportsAccount().click()
+    }
+
+    ClickReportsLTKL(){
+        this.element.ReportsLTKL().click()
+    }
+
+    ClickGoAML(){
+        this.element.GoAML().click()
+    }
+
+    ClickGoAMLLTKL(){
+        this.element.GoAMLLTKL().click()
+    }
+
+    ClickRegulatorInquiry(){
+        this.element.RegulatorInquiry().click()
+    }
+
+    ClickWICConductor(){
+        this.element.WICConductor().click()
+    }
+
+    ClickWICConductorProfile(){
+        this.element.WICConductorProfile().click()
+    }
+
+    ClickBeneficialOwner(){
+        this.element.BeneficialOwner().click()
+    }
+
+    ClickBeneficialOwnerProfile(){
+        this.element.BeneficialOwnerProfile().click()
+    }
+
+    ClickParameter(){
+        this.element.Parameter().click()
+    }
+
+    ClickGeneralParameter(){
+        this.element.GeneralParameter().click()
+    }
+
+    ClickPEPWatchList(){
+        this.element.PEPWatchList().click()
+    }
+
+    ClickNegativeList(){
+        this.element.NegativeList().click()
     }
 
     ClickUserManagement(){
-        this.elements.UserManagement().click()
+        this.element.UserManagement().click()
     }
 
     ClickUser(){
-        this.elements.User().click()
+        this.element.User().click()
     }
 
     ClickRole(){
-        this.elements.Role().click()
+        this.element.Role().click()
     }
+
+    ClickSIPENDAR(){
+        this.element.SIPENDAR().click()
+    }
+
+    ClickSIPENDARPROAKTIF(){
+        this.element.SIPENDARPROAKTIF().click()
+    }
+
+    ClickSIPENDARINQUIRY(){
+        this.element.SIPENDARINQUIRY().click()
+    }
+
+
+
 
 }
 
-export default MenuElement
+export default Menupage
