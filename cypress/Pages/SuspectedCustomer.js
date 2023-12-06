@@ -2,100 +2,94 @@ class SuspectedCustomer {
 
     element = {
 
-        AddSuspect : () => cy.xpath ('//button[@id="btn_add_suspect"]'),
-        AddCustomerID :() => cy.xpath('//input[@id="customer_id"]'),
-        SuspectCodeList :() => cy.xpath('//form[@id="form_add_suspect"]/div/div/div[5]/span'),
-        ValueSuspectCode :() => cy.xpath ('//ul[@id="select2-suspect_code-results"]/li[3]'),
-        AddSuspectNews :() => cy.xpath ('//textarea[@id="suspect_news"]'),
-        AddSuspectNumber :() => cy.xpath ('//input[@id="suspect_number"]'),
-        ButtonAdd :() => cy.xpath ('//button[@id="btn_add"]'),
+        CustomerSuspectList :() => cy.xpath ('(//li[@class="nav-item bg-success-light"])[1]'),
+        ApprovedCustomerSuspect :() => cy.xpath ('(//li[@class="nav-item bg-success-light"])[2]'),
+        RemarkSuspectList :() => cy.xpath ("//a[@class='nav-link font-weight-bold active']"),
 
-        CustomerList :() => cy.xpath ('//button[@id="home-tab"]'),
-        MakeSuspect :() => cy.xpath('//button[@id="btn_cust"]'),
-        ButtonEditRemark :() => cy.xpath ('(//tbody[@id="elm_tbody_cust"]/tr/td[3]/center/button)[1]'),
-        SuspectionRemark :() => cy.xpath('//textarea[@id="remark"]'),
-        ApproveRemark : () => cy.xpath ('//button[@id="btn_remark"]'),
-        SubmitRemark :() => cy.xpath ('//button[@id="btn-save-make-exception"]'),
+        MakeSuspect :() => cy.xpath("//button[@id='btn-make-suspect']"),
+        CancelSuspect :() => cy.xpath('//button[@id="btn-cancel-suspect"]'),
+        ButtonYesCancelSuspect :() => cy.xpath('//button[@class="swal2-confirm swal2-styled"]'),
+
+        ButtonEditRemark :() => cy.xpath ("(//button[@class='btn btn-primary btn-icon btn-remark-suspect'])[1]"),
+        IsSuspectYes :() => cy.xpath('(//label[@class="kt-radio kt-radio--success"])'),
+        IsSuspectNo :() => cy.xpath('(//label[@class="kt-radio kt-radio--danger"])'),
+        SuspectionRemark :() => cy.xpath('(//input[@id="note"])[1]'),
+        ApproveRemark : () => cy.xpath ('//button[@id="btn-yes-add"]'),
+        CancelRemark : () => cy.xpath ('(//button[@class="btn btn-secondary"])[3]'),
         OKButton : () => cy.xpath ('//button[@class="swal2-confirm btn-finish swal2-styled"]'),
-        CancelAddRemark : () => cy.xpath ('(//form[@id="form_remark"]/div[2]/button)[1]'),
-        ViewLog :() => cy.xpath ('(//tbody[@id="elm_tbody_cust"]/tr/td[4]/center/button[2])[1]'),
-        CancelViewLog :() => cy.xpath('//div[@id="remark_view_modal"]/div/div/form/div[2]/button'),
-        ScreeningValue :() => cy.xpath('(//input[@data-type="screening-value"])[1]'),
-        FileName :() => cy.xpath('(//input[@data-type="file-name"])[1]'),
-        CreatedByName :() => cy.xpath('(//input[@data-type="created-by name"])[1]'),
-        CreatedOn :() => cy.xpath('(//input[@data-type="created-on"])[1]'),
-        CustomerID :() => cy.xpath('(//input[@data-type="customer-id"])[1]'),
-        CustomerType :() => cy.xpath('(//input[@data-type="customer-type"])[1]'),
-        CustomerName :() => cy.xpath('(//input[@data-type="customer-name"])[1]'),
-        Suspect :() => cy.xpath('(//input[@data-type="suspect"])[1]'),
-        Description :() => cy.xpath('(//input[@data-type="description"])[1]'),
-        BirthPlace :() => cy.xpath('(//input[@data-type="birth-estabilished place"])[1]'),
-        BirthDate :() => cy.xpath('(//input[@data-type="birth-estabilished date"])[1]'),
-        Methode :() => cy.xpath('(//input[@data-type="method"])[1]'),
-        ChecklistSuspect :() => cy.xpath('(//tbody[@id="elm_tbody_cust"]/tr/td[2]/div/input)[1]'),
-        MakeSuspectRemark :() => cy.xpath('//textarea[@id="remarkmake"]'),
-        ApproveSuspect :() => cy.xpath ('//button[@id="btn_make_remark"]'),
-        AbortButton :() => cy.xpath('(//tbody[@id="elm_tbody_cust"]/tr/td[3]/div/input)[1]'),
-        ButtonExportList :() => cy.xpath ('//form[@id="form_cust"]/div/a'),
 
-        CustomerSuspect :() => cy.xpath('//button[@id="profile-tab"]'),
-        CancelSuspect :() => cy.xpath('//button[@id="btn_suspect"]'),
-        ButtonEditRemarkSuspect :() => cy.xpath ('(//tbody[@id="elm_thead_suspect"]/tr/td[4]/center/button)[1]'),
-        ButtonCancelAddRemark : () => cy.xpath ('(//div[@id="cancel_modal"]/div/div/form/div[2]/button)[1]'),
-        ViewLogSuspect :() => cy.xpath ('(//tbody[@id="elm_thead_suspect"]/tr/td[4]/center/button[2])[1]'),
-        ScreeningValueSuspect :() => cy.xpath('//thead[@id="elm_thead_suspect"]/tr[2]/th[5]'),
-        FileNameSuspect :() => cy.xpath('(//input[@data-type="file-name"])[2]'),
-        CreatedByNameSuspect :() => cy.xpath('(//input[@data-type="created-by name"])[2]'),
-        CreatedOnSuspect :() => cy.xpath('(//input[@data-type="created-on"])[2]'),
-        CustomerIDSuspect :() => cy.xpath('(//input[@data-type="customer-id"])[2]'),
-        CustomerTypeDescSuspect :() => cy.xpath('(//input[@data-type="customer-type"])[2]'),
-        CustomerNameSuspect :() => cy.xpath('(//input[@data-type="customer-name"])[2]'),
-        SuspectDescSuspect :() => cy.xpath('(//input[@data-type="suspect"])[2]'),
-        BirthPlaceSuspect :() => cy.xpath('(//input[@data-type="birth-estabilished place"])[2]'),
-        BirthDateSuspect :() => cy.xpath('(//input[@data-type="birth-estabilished date"])[2]'),
-        MethodeSuspect :() => cy.xpath('(//input[@data-type="method"])[2]'),
-        DescriptionSuspect :() => cy.xpath('(//input[@data-type="description"])[2]'),
-        ButtonExportSuspect :() => cy.xpath ('//form[@id="form_suspect"]/div/a')
+
+        ChecklistBox : () => cy.xpath ('(//input[@type="checkbox"])'),
+
+        ViewLog :() => cy.xpath ("(//button[@class='btn btn-danger btn-icon btn-view-timeline'])[1]"),
+        CancelViewLog :() => cy.xpath("(//button[@class='btn btn-secondary'])[4]"),
+        
+        //SearchingCustomerSuspectList
+        CustomerID :() => cy.xpath('(//input[@id="search-customer-id"])[1]'),
+        CustomerName :() => cy.xpath('(//input[@id="search-customer-name"])[1]'),
+        BankType :() => cy.xpath('(//input[@id="search-bank-desc"])[1]'),
+        SuspectType :() => cy.xpath('//span[@id="select2-search_suspect_desc-container"]'),
+        SearchSuspectType :() => cy.xpath('input[@class="select2-search__field"]'),
+        News :() => cy.xpath('(//input[@id="search-news1"])[1]'),
+
+        //SearchingApprovedCustomerSuspectList
+        CustomerIDApproved :() => cy.xpath('(//input[@id="search-customer-id"])[2]'),
+        CustomerNameApproved :() => cy.xpath('(//input[@id="search-customer-name"])[2]'),
+        BankTypeApproved :() => cy.xpath('(//input[@id="search-bank-desc"])[2]'),
+        SuspectTypeApproved :() => cy.xpath('//span[@id="select2-search_suspect_desc2-container"]'),
+        SearchSuspectTypeApproved :() => cy.xpath('//input[@class="select2-search__field"]'),
+        NewsApproved :() => cy.xpath('(//input[@id="search-news1"])[2]'),
+
+        //SearchingRemarkCustomerSuspectList
+        CustomerIDRemark :() => cy.xpath('(//input[@id="search-customer-id"])[3]'),
+        CustomerNameRemark :() => cy.xpath('(//input[@id="search-customer-name"])[3]'),
+        BankTypeRemark :() => cy.xpath('(//input[@id="search-bank-desc"])[3]'),
+        SuspectTypeRemark :() => cy.xpath('//span[@id="select2-search_suspect_desc3-container"]'),
+        SearchSuspectTypeRemark :() => cy.xpath('//input[@class="select3-search__field"]'),
+        NewsRemark :() => cy.xpath('(//input[@id="search-news1"])[3]'),
     }
 
 
-    ClickAddSuspect(){
-        this.element.AddSuspect().click()
-    }
-    
-    InputAddCustomerID(AddCustomerID) {
-        this.element.AddCustomerID().type(AddCustomerID).type('{enter}')
-    }
-    
-    ClickSuspectCodeList(){
-        this.element.SuspectCodeList().click()
-    }  
-
-    ClickValueSuspectCode() {
-        this.element.ValueSuspectCode().click()
+    ClickChecklistBox(){
+        this.element.ChecklistBox().check({ force: true })
     }
 
-    InputAddSuspectNews(AddSuspectNews) {
-        this.element.AddSuspectNews().type(AddSuspectNews)
+    ClickCustomerSuspectList(){
+        this.element.CustomerSuspectList().click()
     }
 
-    InputAddSuspectNumber(AddSuspectNumber) {
-        this.element.AddSuspectNumber().type(AddSuspectNumber)
+    ClickApprovedCustomerSuspect(){
+        this.element.ApprovedCustomerSuspect().click()
     }
 
-    ClickButtonAdd(){
-        this.element.ButtonAdd().click()
+    ClickButtonYesCancelSuspect(){
+        this.element.ButtonYesCancelSuspect().click()
     }
 
-
-
-
-    ClickCustomerList(){
-        this.element.CustomerList().click()
+    ClickRemarkSuspectList(){
+        this.element.RemarkSuspectList().click()
     }
 
     ClickMakeSuspect(){
         this.element.MakeSuspect().click()
+    }
+
+    ClickCancelSuspect(){
+        this.element.CancelSuspect().click()
+    }
+
+    ClickCancelSuspect(){
+        this.element.CancelSuspect().click()
+    }
+
+
+
+    ClickIsSuspectYes(){
+        this.element.IsSuspectYes().click()
+    }
+
+    ClickIsSuspectNo(){
+        this.element.IsSuspectNo().click()
     }
 
     ClickButtonEditRemark(){
@@ -110,6 +104,10 @@ class SuspectedCustomer {
         this.element.ApproveRemark().click()
     }
 
+    ClickCancelRemark(){
+        this.element.CancelRemark().click()
+    }
+
     ClickSubmitRemark(){
         this.element.SubmitRemark().click()
     }
@@ -118,82 +116,92 @@ class SuspectedCustomer {
         this.element.OKButton().click()
     }
 
-    ClickCancelAddRemark(){
-        this.element.CancelAddRemark().click()
-    }
-
     ClickViewLog(){
         this.element.ViewLog().click()
     }
 
-    InputScreeningValue(ScreeningValue){
-        this.element.ScreeningValue().type(ScreeningValue).type('{enter}')
+    ClickCancelViewLog(){
+        this.element.CancelViewLog().click()
     }
 
-    InputFileName(FileName){
-        this.element.FileName().type(FileName).type('{enter}')
-    }
-
-    InputCreatedByName(CreatedByName){
-        this.element.CreatedByName().type(CreatedByName).type('{enter}')
-    }
-
-    InputCreatedOn(CreatedOn){ 
-        this.element.CreatedOn().type(CreatedOn).type('{enter}')
-    }
-
+    //Input1
     InputCustomerID(CustomerID){
-        this.element.CustomerID().type(CustomerID).type('{enter}')
+        this.element.CustomerID().type(CustomerID, { force: true }).type('{enter}')
     }
 
-    InputCustomerType(CustomerType){
-        this.element.CustomerType().type(CustomerType).type('{enter}')
+    DeleteCustomerID(){
+        this.element.CustomerID().clear()
     }
 
     InputCustomerName(CustomerName){
         this.element.CustomerName().type(CustomerName).type('{enter}')
     }
 
-    InputSuspect(Suspect){
-        this.element.Suspect().type(Suspect).type('{enter}')
+    InputBankType(BankType){
+        this.element.BankType().type(BankType).type('{enter}')
     }
 
-    InputDescription(Description){
-        this.element.Description().type(Description).type('{enter}')
+    InputSuspectType(SuspectType){ 
+        this.element.SuspectType().type(SuspectType).type('{enter}')
     }
 
-    InputBirthPlace(BirthPlace){
-        this.element.BirthPlace().type(BirthPlace).type('{enter}')
+    InputSearchSuspectType(SearchSuspectType){
+        this.element.SearchSuspectType().type(SearchSuspectType).type('{enter}')
     }
 
-    InputBirthDate(BirthDate){
-        this.element.BirthDate().type(BirthDate).type('{enter}')
+    InputNews(News){
+        this.element.News().type(News).type('{enter}')
     }
 
-    InputMethode(Methode){
-        this.element.Methode().type(Methode).type('{enter}')
+    //Input2
+    InputCustomerIDApproved(CustomerID){
+        this.element.CustomerIDApproved().type(CustomerID).type('{enter}')
     }
 
-    ClickChecklistSuspect(){
-        this.element.ChecklistSuspect().click()
+    InputCustomerNameApproved(CustomerName){
+        this.element.CustomerNameApproved().type(CustomerName).type('{enter}')
     }
 
-    InputMakeSuspectRemark(MakeSuspectRemark){
-        this.element.MakeSuspectRemark().type(MakeSuspectRemark)
+    InputBankTypeApproved(BankType){
+        this.element.BankTypeApproved().type(BankType).type('{enter}')
     }
 
-    ClickApproveSuspect(){
-        this.element.ApproveSuspect().click()
+    InputSuspectTypeApproved(SuspectType){ 
+        this.element.SuspectTypeApproved().type(SuspectType).type('{enter}')
     }
 
-    ClickAbortButton(){
-        this.element.AbortButton().click()
+    InputSearchSuspectTypeApproved(SearchSuspectType){
+        this.element.SearchSuspectTypeApproved().type(SearchSuspectType).type('{enter}')
     }
 
-    ClickButtonExportList(){
-        this.element.ButtonExportList().click()
+    InputNewsApproved(News){
+        this.element.NewsApproved().type(News).type('{enter}')
     }
 
+    //Input3
+    InputCustomerIDRemark(CustomerID){
+        this.element.CustomerIDRemark().type(CustomerID).type('{enter}')
+    }
+
+    InputCustomerNameRemark(CustomerName){
+        this.element.CustomerNameRemark().type(CustomerName).type('{enter}')
+    }
+
+    InputBankTypeRemark(BankType){
+        this.element.BankTypeRemark().type(BankType).type('{enter}')
+    }
+
+    InputSuspectTypeRemark(SuspectType){ 
+        this.element.SuspectTypeRemark().type(SuspectType).type('{enter}')
+    }
+
+    InputSearchSuspectTypeRemark(SearchSuspectType){
+        this.element.SearchSuspectTypeRemark().type(SearchSuspectType).type('{enter}')
+    }
+
+    InputNewsRemark(News){
+        this.element.NewsRemark().type(News).type('{enter}')
+    }
 
 
 //      _____                           _           _    _____          _                                                                         _ 
@@ -206,83 +214,6 @@ class SuspectedCustomer {
 //                     |_|                                                                                    |_|   |_|                               
 
 
-
-
-    ClickCustomerSuspect(){
-        this.element.CustomerSuspect().click()
-    }
-
-    ClickCancelSuspect(){
-        this.element.CancelSuspect().click()
-    }
-
-    ClickCancelViewLog(){
-        this.element.CancelViewLog().click()
-    }
-
-    ClickButtonEditRemarkSuspect(){
-        this.element.ButtonEditRemarkSuspect().click()
-    }
-
-    ClickButtonCancelAddRemark(){
-        this.element.ButtonCancelAddRemark().click()
-    }
-
-    ClickViewLogSuspect(){
-        this.element.ViewLogSuspect().click()
-    }
-
-    InputScreeningValueSuspect(ScreeningValueSuspect){
-        this.element.ScreeningValueSuspect().type(ScreeningValueSuspect).type('{enter}')
-    }
-
-    InputFileNameSuspect(FileNameSuspect){
-        this.element.FileNameSuspect().type(FileNameSuspect).type('{enter}')
-    }
-
-    InputCreatedByNameSuspect(CreatedByNameSuspect){
-        this.element.CreatedByNameSuspect().type(CreatedByNameSuspect).type('{enter}')
-    }
-
-    InputCreatedOnSuspect(CreatedOnSuspect){
-        this.element.CreatedOnSuspect().type(CreatedOnSuspect).type('{enter}')
-    }
-
-    InputCustomerIDSuspect(CustomerIDSuspect){
-        this.element.CustomerIDSuspect().type(CustomerIDSuspect).type('{enter}')
-    }
-
-    InputCustomerTypeDescSuspect(CustomerTypeDescSuspect){
-        this.element.CustomerTypeDescSuspect().type(CustomerTypeDescSuspect).type('{enter}')
-    }
-
-    InputCustomerNameSuspect(CustomerNameSuspect){
-        this.element.CustomerNameSuspect().type(CustomerNameSuspect).type('{enter}')
-    }
-
-    InputSuspectDescSuspect(SuspectDescSuspect){
-        this.element.SuspectDescSuspect().type(SuspectDescSuspect).type('{enter}')
-    }
-
-    InputDescriptionSuspect(DescriptionSuspect){
-        this.element.DescriptionSuspect().type(DescriptionSuspect).type('{enter}')
-    }
-
-    InputBirthPlaceSuspect(BirthPlaceSuspect){
-        this.element.BirthPlaceSuspect().type(BirthPlaceSuspect).type('{enter}')
-    }
-
-    InputBirthDateSuspect(BirthDateSuspect){
-        this.element.BirthDateSuspect().type(BirthDateSuspect).type('{enter}')
-    }
-
-    InputMethodeSuspect(MethodeSuspect){
-        this.element.MethodeSuspect().type(MethodeSuspect).type('{enter}')
-    }
-
-    ClickButtonExportSuspectt(){
-        this.element.ButtonExportSuspect().click()
-    }
 }
 export default SuspectedCustomer
 
