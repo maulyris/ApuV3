@@ -3,6 +3,7 @@ class Menupage {
         "Home" :() => cy.xpath ('//i[@class="la la-home"]'),
         "Customer" :()=> cy.xpath('(//*[contains(text(),"Customer") and @class="kt-menu__link-text font-weight-bold"])[1]'),
         "CustomerProfile" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Customer Profile")]'),
+        "CustomerEDD" :() => cy.xpath("//span[normalize-space()='Customer EDD']"),
         "Workflow" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Workflow")]'),
         "CashTransaction" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Cash Transaction")]'),
         "UnsualTransaction" :() => cy.xpath ('//span[@class="kt-menu__link-text font-weight-bold" and contains(text(),"Unusual Transaction List")]'),
@@ -54,6 +55,10 @@ class Menupage {
 
     ClickCustomerProfile(){
         this.element.CustomerProfile().click()
+    }
+
+    ClickCustomerEDD(){
+        this.element.CustomerEDD().click()
     }
 
     ClickWorkflow(){
